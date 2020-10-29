@@ -1,11 +1,11 @@
-cask 'mongodb-compass-readonly' do
-  version '1.21.2'
-  sha256 '404162d4be0a17c49ca6c43f1875e3b43b31ea8001359962fbb09078a8cb61f8'
+cask "mongodb-compass-readonly" do
+  version "1.22.1"
+  sha256 "aa8fce33daf9d3275db4aaaa0dbe3b5f361fd22f00c6ba8566282dadafc94456"
 
   url "https://downloads.mongodb.com/compass/mongodb-compass-readonly-#{version}-darwin-x64.dmg"
-  appcast 'https://www.mongodb.com/download-center/compass'
-  name 'MongoDB Compass Readonly'
-  homepage 'https://www.mongodb.com/products/compass'
+  appcast "https://www.mongodb.com/try/download/compass"
+  name "MongoDB Compass Readonly"
+  homepage "https://www.mongodb.com/products/compass"
 
-  app 'MongoDB Compass Readonly.app'
+  app "MongoDB Compass Readonly.app"
 end

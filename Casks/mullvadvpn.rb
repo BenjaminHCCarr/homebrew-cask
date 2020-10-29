@@ -1,17 +1,18 @@
-cask 'mullvadvpn' do
-  version '2020.4'
-  sha256 '8570baaa98c3ef884bd89e9bb855dc68e716cb76eef06d7d5ea5b8e32fca416a'
+cask "mullvadvpn" do
+  version "2020.6"
+  sha256 "b830aefbf7fc51c6e53745e793f173e15e1d1a7fa59e8716fcd51a642b840bd1"
 
   # github.com/mullvad/mullvadvpn-app/ was verified as official when first introduced to the cask
   url "https://github.com/mullvad/mullvadvpn-app/releases/download/#{version}/MullvadVPN-#{version}.pkg"
-  appcast 'https://github.com/mullvad/mullvadvpn-app/releases.atom'
-  name 'Mullvad VPN'
-  homepage 'https://mullvad.net/'
+  appcast "https://github.com/mullvad/mullvadvpn-app/releases.atom"
+  name "Mullvad VPN"
+  desc "VPN client"
+  homepage "https://mullvad.net/"
 
-  conflicts_with cask: 'mullvadvpn-beta'
+  conflicts_with cask: "mullvadvpn-beta"
 
   pkg "MullvadVPN-#{version}.pkg"
 
-  uninstall pkgutil:   'net.mullvad.vpn',
-            launchctl: 'net.mullvad.daemon'
+  uninstall pkgutil:   "net.mullvad.vpn",
+            launchctl: "net.mullvad.daemon"
 end

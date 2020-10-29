@@ -1,11 +1,12 @@
-cask 'btcpayserver-vault' do
-  version '1.0.2'
-  sha256 '9118832344110d7ed8a65cedf6ba50f4891f7ac389e5152f4351d36514b0e8aa'
+cask "btcpayserver-vault" do
+  version "1.0.5"
+  sha256 "0e232bc305c8507cfbf7cb62188c66eae14f786981f698bf0ec4610bab10f668"
 
   url "https://github.com/btcpayserver/BTCPayServer.Vault/releases/download/Vault%2Fv#{version}/BTCPayServerVault-osx-x64-#{version}.dmg"
-  appcast 'https://github.com/btcpayserver/BTCPayServer.Vault/releases.atom'
-  name 'BTCPayServer Vault'
-  homepage 'https://github.com/btcpayserver/BTCPayServer.Vault'
+  appcast "https://github.com/btcpayserver/BTCPayServer.Vault/releases.atom"
+  name "BTCPayServer Vault"
+  desc "App that allows web applications to access a hardware wallet"
+  homepage "https://github.com/btcpayserver/BTCPayServer.Vault"
 
-  app 'BTCPayServer Vault.app'
+  app "BTCPayServer Vault.app"
 end

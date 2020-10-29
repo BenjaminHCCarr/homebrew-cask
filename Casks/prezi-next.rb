@@ -1,11 +1,11 @@
-cask 'prezi-next' do
-  version '1.43.0'
-  sha256 '7009ff77350e4f76805ada0ceb94ed374749f70f67c1afbc90bc04a2ecb5d0e8'
+cask "prezi-next" do
+  version "1.47.0"
+  sha256 "8c01cdf5860314d2252f4a7f7a5bea292da283cc29626bfd219a4bd2b91572ff"
 
   url "https://desktopassets.prezi.com/mac/pitch/releases/Prezi_Next_#{version}.dmg"
-  appcast 'https://prezidesktop.s3.amazonaws.com/assets/mac/pitch/updates/prezi-business.xml'
-  name 'Prezi Next'
-  homepage 'https://prezi.com/'
+  appcast "https://prezidesktop.s3.amazonaws.com/assets/mac/pitch/updates/prezi-business.xml"
+  name "Prezi Next"
+  homepage "https://prezi.com/"
 
-  app 'Prezi Next.app'
+  app "Prezi Next.app"
 end

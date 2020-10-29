@@ -1,11 +1,12 @@
-cask 'protonmail-unofficial' do
-  version '1.0.4'
-  sha256 'cf7c1a0c2b4cd04635433d5ff17bc74362bb328679181277445676f0cdc4672c'
+cask "protonmail-unofficial" do
+  version "1.2.1"
+  sha256 "012882c8ad6d564d96bdc9e172ee6c04a3a44ed81dc5db9c29dd033aa31cd46e"
 
-  url "https://github.com/protonmail-desktop/application/releases/download/#{version}/protonmail-desktop-unofficial-#{version}.dmg"
-  appcast 'https://github.com/protonmail-desktop/application/releases.atom'
-  name 'Protonmail Desktop'
-  homepage 'https://github.com/protonmail-desktop/application'
+  url "https://github.com/unofficial-protonmail-desktop/application/releases/download/v#{version}/Unofficial-desktop-client-for-ProtonMail-#{version}.dmg"
+  appcast "https://github.com/unofficial-protonmail-desktop/application/releases.atom"
+  name "Protonmail Desktop"
+  desc "Unofficial Electron wrapper for ProtonMail"
+  homepage "https://github.com/unofficial-protonmail-desktop/application"
 
-  app 'Protonmail Desktop (unofficial).app'
+  app "Unofficial desktop client for ProtonMail.app"
 end

@@ -1,19 +1,19 @@
-cask 'bettertouchtool' do
-  version '3.389-1612'
-  sha256 '2b47402d15843d361a504ab938689327335d6aceaeed0ebac4b421e5623a0fbc'
+cask "bettertouchtool" do
+  version "3.404-1635"
+  sha256 "d4480e1645c0410458fc8577e17967bd1fdc66cf8299e302c3c36ba6b7949210"
 
-  # bettertouchtool.net/releases/ was verified as official when first introduced to the cask
-  url "https://bettertouchtool.net/releases/btt#{version}.zip"
-  appcast 'https://www.corecode.io/macupdater/appcasts/bettertouchtool.txt'
-  name 'BetterTouchTool'
-  homepage 'https://folivora.ai/'
+  url "https://folivora.ai/releases/BetterTouchTool.zip"
+  appcast "https://www.corecode.io/macupdater/appcasts/bettertouchtool.txt"
+  name "BetterTouchTool"
+  desc "Tool to customize input devices and automate computer systems"
+  homepage "https://folivora.ai/"
 
   auto_updates true
 
-  app 'BetterTouchTool.app'
+  app "BetterTouchTool.app"
 
   zap trash: [
-               '~/Library/Preferences/com.hegenberg.BetterTouchTool.plist',
-               '~/Library/Application Support/BetterTouchTool',
-             ]
+    "~/Library/Preferences/com.hegenberg.BetterTouchTool.plist",
+    "~/Library/Application Support/BetterTouchTool",
+  ]
 end

@@ -1,13 +1,14 @@
-cask 'pdfpenpro' do
-  version '1210.10,1592365188'
-  sha256 '4d4a972b2435728663d23b3c4bdbad16608fee3934d8bd5fd9e0f50ceabf194e'
+cask "pdfpenpro" do
+  version "1220.9,1601949963"
+  sha256 "d9eee91205c556fd33b2f7218d0db5ebf8144eef81202623fe9ed8a04a6fec0c"
 
   url "https://dl.smilesoftware.com/com.smileonmymac.PDFpenPro/#{version.before_comma}/#{version.after_comma}/PDFpenPro-#{version.before_comma}.zip"
-  appcast 'https://updates.smilesoftware.com/com.smileonmymac.PDFpenPro.xml'
-  name 'PDFpenPro'
-  homepage 'https://smilesoftware.com/PDFpenPro'
+  appcast "https://updates.smilesoftware.com/com.smileonmymac.PDFpenPro.xml"
+  name "PDFpenPro"
+  desc "PDF editing software"
+  homepage "https://smilesoftware.com/PDFpenPro"
 
-  depends_on macos: '>= :sierra'
+  depends_on macos: ">= :sierra"
 
-  app 'PDFpenPro.app'
+  app "PDFpenPro.app"
 end

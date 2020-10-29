@@ -1,16 +1,17 @@
-cask 'dash-dash' do
-  version '0.15.0.0'
-  sha256 '09f76396217eef6e5a7ba464d9b1f5abd78925b314f663bb709fdb02013899df'
+cask "dash-dash" do
+  version "0.16.0.1"
+  sha256 "6a66a5ad99168cd1babc47e43712b038bbd94e25e0f73d5fb77fb6a76c06919d"
 
   # github.com/dashpay/dash/ was verified as official when first introduced to the cask
   url "https://github.com/dashpay/dash/releases/download/v#{version}/dashcore-#{version}-osx.dmg"
-  appcast 'https://github.com/dashpay/dash/releases.atom'
-  name 'Dash'
-  homepage 'https://www.dash.org/'
+  appcast "https://github.com/dashpay/dash/releases.atom"
+  name "Dash"
+  desc "Dash - Reinventing Cryptocurrency"
+  homepage "https://www.dash.org/"
 
-  app 'Dash-Qt.app'
+  app "Dash-Qt.app"
 
   preflight do
-    set_permissions "#{staged_path}/Dash-Qt.app", '0755'
+    set_permissions "#{staged_path}/Dash-Qt.app", "0755"
   end
 end

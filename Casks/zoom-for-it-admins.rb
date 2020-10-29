@@ -1,60 +1,50 @@
-cask 'zoom-for-it-admins' do
-  version '5.1.27838.0614'
-  sha256 '5c856ae39e06b0d3dc62c68e937fae1c641f43c2d74f07c3483131611ab01602'
+cask "zoom-for-it-admins" do
+  version "5.4.58698.1027"
+  sha256 "3b6597d07fbaf2cbaade920fb4d072290c9e4b449c668de742dd664752333fe1"
 
   # d11yldzmag5yn.cloudfront.net/ was verified as official when first introduced to the cask
   url "https://d11yldzmag5yn.cloudfront.net/prod/#{version}/ZoomInstallerIT.pkg"
-  appcast 'https://zoom.us/download'
-  name 'Zoom for IT Admins'
-  homepage 'https://support.zoom.us/hc/en-us/articles/115001799006-Mass-Deployment-with-Preconfigured-Settings-for-Mac'
+  appcast "https://macupdater.net/cgi-bin/check_urls/check_url_redirect.cgi?url=https://zoom.us/client/latest/Zoom.pkg"
+  name "Zoom for IT Admins"
+  desc "Video communication and virtual meeting platform"
+  homepage "https://support.zoom.us/hc/en-us/articles/115001799006-Mass-Deployment-with-Preconfigured-Settings-for-Mac"
 
   auto_updates true
-  conflicts_with cask: 'zoomus'
+  conflicts_with cask: "zoomus"
 
-  pkg 'ZoomInstallerIT.pkg'
+  pkg "ZoomInstallerIT.pkg"
 
-  postflight do
-    set_ownership '~/Library/Application Support/zoom.us'
-  end
-
-  uninstall quit:       'us.zoom.ZoomOpener',
-            signal:     ['KILL', 'us.zoom.xos'],
-            pkgutil:    'us.zoom.pkg.videmeeting',
-            login_item: 'ZoomOpener',
-            script:     {
-                          executable:   '/usr/bin/defaults',
-                          args:         ['delete', 'us.zoom.xos'],
-                          must_succeed: false,
-                          sudo:         true,
-                        },
-            delete:     [
-                          '/Applications/zoom.us.app',
-                          '/Library/Audio/Plug-Ins/HAL/ZoomAudioDevice.driver',
-                          '/Library/Internet Plug-Ins/ZoomUsPlugIn.plugin',
-                          '/Library/Logs/DiagnosticReports/zoom.us*',
-                          '~/.zoomus/ZoomOpener.app',
-                          '~/Library/Internet Plug-Ins/ZoomUsPlugIn.plugin',
-                        ]
+  uninstall signal:  ["KILL", "us.zoom.xos"],
+            pkgutil: "us.zoom.pkg.videmeeting",
+            delete:  [
+              "/Applications/zoom.us.app",
+              "/Library/Audio/Plug-Ins/HAL/ZoomAudioDevice.driver",
+              "/Library/Internet Plug-Ins/ZoomUsPlugIn.plugin",
+              "/Library/Logs/DiagnosticReports/zoom.us*",
+            ]
 
   zap trash: [
-               '~/.zoomus',
-               '~/Desktop/Zoom',
-               '~/Documents/Zoom',
-               '~/Library/Application Support/CloudDocs/session/containers/iCloud.us.zoom.videomeetings',
-               '~/Library/Application Support/CloudDocs/session/containers/iCloud.us.zoom.videomeetings.plist',
-               '~/Library/Application Support/zoom.us',
-               '~/Library/Caches/us.zoom.xos',
-               '~/Library/Cookies/us.zoom.xos.binarycookies',
-               '~/Library/Logs/zoom.us',
-               '~/Library/Logs/zoominstall.log',
-               '~/Library/Logs/ZoomPhone',
-               '~/Library/Mobile Documents/iCloud~us~zoom~videomeetings',
-               '~/Library/Preferences/ZoomChat.plist',
-               '~/Library/Preferences/us.zoom.airhost.plist',
-               '~/Library/Preferences/us.zoom.xos.Hotkey.plist',
-               '~/Library/Preferences/us.zoom.xos.plist',
-               '~/Library/Safari/PerSiteZoomPreferences.plist',
-               '~/Library/SafariTechnologyPreview/PerSiteZoomPreferences.plist',
-               '~/Library/Saved Application State/us.zoom.xos.savedState',
-             ]
+    "/Library/Preferences/us.zoom.config.plist",
+    "~/.zoomus",
+    "~/Desktop/Zoom",
+    "~/Documents/Zoom",
+    "~/Library/Application Support/CloudDocs/session/containers/iCloud.us.zoom.videomeetings",
+    "~/Library/Application Support/CloudDocs/session/containers/iCloud.us.zoom.videomeetings.plist",
+    "~/Library/Application Support/CrashReporter/zoom.us*",
+    "~/Library/Application Support/zoom.us",
+    "~/Library/Caches/us.zoom.xos",
+    "~/Library/Cookies/us.zoom.xos.binarycookies",
+    "~/Library/Internet Plug-Ins/ZoomUsPlugIn.plugin",
+    "~/Library/Logs/zoom.us",
+    "~/Library/Logs/zoominstall.log",
+    "~/Library/Logs/ZoomPhone",
+    "~/Library/Mobile Documents/iCloud~us~zoom~videomeetings",
+    "~/Library/Preferences/ZoomChat.plist",
+    "~/Library/Preferences/us.zoom.airhost.plist",
+    "~/Library/Preferences/us.zoom.xos.Hotkey.plist",
+    "~/Library/Preferences/us.zoom.xos.plist",
+    "~/Library/Safari/PerSiteZoomPreferences.plist",
+    "~/Library/SafariTechnologyPreview/PerSiteZoomPreferences.plist",
+    "~/Library/Saved Application State/us.zoom.xos.savedState",
+  ]
 end

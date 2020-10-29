@@ -1,14 +1,21 @@
-cask 'jasp' do
-  version '0.12.2.0'
-  sha256 '90fad0e14152066b9d93c67abb2894af3b6e89b3917294db4224747138eb0c8f'
+cask "jasp" do
+  version "0.14.0.0"
 
-  url "https://static.jasp-stats.org/JASP-#{version}.dmg"
-  appcast 'https://jasp-stats.org/download/',
-          must_contain: version.sub(%r{(.0)+$}, '')
-  name 'JASP'
-  homepage 'https://jasp-stats.org/'
+  if MacOS.version <= :mojave
+    sha256 "f2ea3faec2de0afb218b52aae4dfed7c4f0521469091e67715ca22f28aa21583"
 
-  depends_on macos: '>= :high_sierra'
+    url "https://static.jasp-stats.org/JASP-#{version}-preCatalina.dmg"
+  else
+    sha256 "2e6a750f0f23d6528b72792712a4290a957d3bc1be40c66b110ac741d55a13be"
 
-  app 'JASP.app'
+    url "https://static.jasp-stats.org/JASP-#{version}-Catalina.dmg"
+  end
+  appcast "https://jasp-stats.org/download/",
+          must_contain: version.sub(/(.0)+$/, "")
+  name "JASP"
+  homepage "https://jasp-stats.org/"
+
+  depends_on macos: ">= :high_sierra"
+
+  app "JASP.app"
 end

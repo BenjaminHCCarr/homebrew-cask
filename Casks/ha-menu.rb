@@ -1,12 +1,12 @@
-cask 'ha-menu' do
-  version '2.2.1'
-  sha256 'f82a100f4c1a69984ddcc3f86e033b1c12fb5ba4defe94a8ae26b5be0f5e8a4b'
+cask "ha-menu" do
+  version "2.4.0"
+  sha256 "30f2d593998a36e1a70a065c1b4f2a61186cc905b21fc6fd6d94edf0631e8212"
 
   # github.com/codechimp-org/ha-menu/ was verified as official when first introduced to the cask
   url "https://github.com/codechimp-org/ha-menu/releases/download/#{version}/HA.Menu.zip"
-  appcast 'https://github.com/codechimp-org/ha-menu/releases.atom'
-  name 'HA Menu'
-  homepage 'https://hamenu.codechimp.org/'
+  appcast "https://github.com/codechimp-org/ha-menu/releases.atom"
+  name "HA Menu"
+  homepage "https://hamenu.codechimp.org/"
 
-  app 'HA Menu.app'
+  app "HA Menu.app"
 end

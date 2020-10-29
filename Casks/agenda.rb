@@ -1,13 +1,14 @@
-cask 'agenda' do
-  version '10.0.3'
-  sha256 'e58c83f1333e13b5b3fee2a62290cc61b86d7c8bdf54bc78145a3ee7528d4acd'
+cask "agenda" do
+  version "11.1"
+  sha256 "91e38194fc2d14cbce7db0b53d03524d695f71b249ffcbe370eeee0f734d1554"
 
   url "https://downloads.agenda.com/Agenda_#{version}.zip"
-  appcast 'https://downloads.agenda.com/AgendaSparkleAppcast.xml'
-  name 'Agenda'
-  homepage 'https://agenda.com/'
+  appcast "https://downloads.agenda.com/AgendaSparkleAppcast.xml"
+  name "Agenda"
+  desc "Note taking application focusing on dates"
+  homepage "https://agenda.com/"
 
-  depends_on macos: '>= :sierra'
+  depends_on macos: ">= :sierra"
 
-  app 'Agenda.app'
+  app "Agenda.app"
 end

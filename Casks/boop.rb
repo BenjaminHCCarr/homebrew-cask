@@ -1,19 +1,20 @@
-cask 'boop' do
-  version '1.0.0'
-  sha256 'f04b3cbb9659a0879c90b915163c8278a6106bc75d82465a8cd8ce6fef62705c'
+cask "boop" do
+  version "1.3.0"
+  sha256 "f976d6dfdd3758053dd449fd5138fa7d9375de8e192bab41e49669ce5a89ede9"
 
   # github.com/IvanMathy/Boop was verified as official when first introduced to the cask
   url "https://github.com/IvanMathy/Boop/releases/download/#{version}/Boop.zip"
-  appcast 'https://github.com/IvanMathy/Boop/releases.atom'
-  name 'Boop'
-  homepage 'https://boop.okat.best/'
+  appcast "https://github.com/IvanMathy/Boop/releases.atom"
+  name "Boop"
+  desc "Scriptable scratchpad for developers"
+  homepage "https://boop.okat.best/"
 
-  depends_on macos: '>= :mojave'
+  depends_on macos: ">= :mojave"
 
-  app 'Boop.app'
+  app "Boop.app"
 
   zap trash: [
-               '~/Library/Application Scripts/com.okatbest.boop',
-               '~/Library/Containers/com.okatbest.boop',
-             ]
+    "~/Library/Application Scripts/com.okatbest.boop",
+    "~/Library/Containers/com.okatbest.boop",
+  ]
 end

@@ -1,13 +1,14 @@
-cask 'ximalaya' do
-  version '1.2.19_1592817383'
-  sha256 '7dc20cb44e2cfecf29c6e5d7e0aff8fd5b36a9d83441c1315dde8f0d3d5c3fb3'
+cask "ximalaya" do
+  version "1.3.3,1603265680"
+  sha256 "7bf5da75cf9482389ad644fb9cd0677b7dc0b7de6d84391ca1d48565ddde337c"
 
   # s1.xmcdn.com/ was verified as official when first introduced to the cask
-  url "https://s1.xmcdn.com/yx/ximalaya-pc-client/last/download/Ximalaya-#{version}.dmg"
-  appcast 'https://macupdater.net/cgi-bin/check_urls/check_url_redirect.cgi?url=https://www.ximalaya.com/down/lite?client=mac'
-  name 'ximalaya'
-  name '喜马拉雅'
-  homepage 'https://www.ximalaya.com/'
+  url "https://s1.xmcdn.com/yx/ximalaya-pc-client/#{version.before_comma}/download/Ximalaya-#{version.before_comma}_#{version.after_comma}.dmg"
+  appcast "https://macupdater.net/cgi-bin/check_urls/check_url_redirect.cgi?url=https://www.ximalaya.com/down/lite?client=mac"
+  name "ximalaya"
+  name "喜马拉雅"
+  desc "Platform for podcasting and audio-sharing"
+  homepage "https://www.ximalaya.com/"
 
-  app '喜马拉雅.app'
+  app "喜马拉雅.app"
 end

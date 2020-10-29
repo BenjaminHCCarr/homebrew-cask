@@ -1,13 +1,14 @@
-cask 'noxappplayer' do
-  version '3.0.3.0,20200601:c0071155ad77455b9dd01aca5d1b05d2'
-  sha256 '0afb106be9140b3899cf039a07b31f5e707d2245db42405cfc6e31f7b4a0630b'
+cask "noxappplayer" do
+  version "3.8.1.0,20201014:0ea933d044244d13ab6472611973b163"
+  sha256 "b0ae0e2a42918d35b4664dc0b8e7e2d2ce502f31958888915c4fc6795db165bd"
 
-  url "https://res06.bignox.com/full/#{version.after_comma.before_colon}/#{version.after_colon}.dmg?filename=Nox_installer_for_mac_intl_#{version.before_comma}.dmg"
-  appcast 'https://www.macupdater.net/cgi-bin/check_urls/check_url_redirect.cgi?url=https://www.bignox.com/en/download/fullPackage/mac_fullzip'
-  name 'NoxAppPlayer'
-  homepage 'https://www.bignox.com/'
+  url "https://res06.bignox.com/full/#{version.after_comma.before_colon}/#{version.after_colon}.dmg?filename=NoxInstaller_#{version.before_comma}_en.dmg"
+  appcast "https://www.macupdater.net/cgi-bin/check_urls/check_url_redirect_curl.cgi?url=https://www.bignox.com/en/download/fullPackage/mac_fullzip"
+  name "NoxAppPlayer"
+  desc "Android emulator to play mobile games"
+  homepage "https://www.bignox.com/"
 
-  container nested: 'NoxAppPlayerInstaller.app/Contents/MacOS/NoxAppPlayer.zip'
+  container nested: "NoxAppPlayerInstaller.app/Contents/MacOS/NoxAppPlayer.zip"
 
-  app 'NoxAppPlayer.app'
+  app "NoxAppPlayer.app"
 end
